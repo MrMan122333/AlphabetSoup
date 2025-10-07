@@ -34,30 +34,38 @@ public class Soup {
 
 
     //Use Math.random() to get a random character from the letters string and return it.
-    public char randomLetter(){
-        return 'a';
+    public String randomLetter(){
+        int x = (int)(Math.random()*letters.length());
+        return letters.substring(x,x+1);
     }
-
+//this code will adds one charecter from the first string 
 
     //returns the letters currently stored with the company name placed directly in the center of all
     //the letters
     public String companyCentered(){
-        return "";
+        int x = ((int)(Math.random()*letters.length()/2));
+        String y = letters.substring(0,x)+company+letters.substring(x);
+        return y;
     }
-
+//This inserts the company name at a random position near the center of the string 
 
     //should remove the first available vowel from letters. If there are no vowels this method has no effect.
     public void removeFirstVowel(){
-        letters=letters.replaceFirst("{AEIOUaeiou]", "")
+        int x = letters.indexOf("AEIOUaeiou");
+        letters=letters.substring(0,x)+letters.substring(x);
     }
-
+//This will remove the first vowel from left to right
     //should remove "num" letters from a random spot in the string letters. You may assume num never exceeds the length of the string.
     public void removeSome(int num){
-
+        int x =(int)(Math.random()*letters.length());
+        int z =(int)(Math.random()*(letters.length()-num));
+        String y = letters.substring(z,z+x);
     }
-
+//this removes the chunks of letters from the soup
     //should remove the word "word" from the string letters. If the word is not found in letters then it does nothing.
     public void removeWord(String word){
-        
+        int x = letters.indexOf(word);
+        letters=letters.substring(0,x)+letters.substring(x+word.length());
     }
 }
+//This removes the first occurrence of a word from the string

@@ -10,7 +10,7 @@ public class Driver {
                 mySoup.add(input.replace("add ", ""));
                 System.out.println("new letters is " + mySoup.getLetters());
             } 
-            
+            //I really have no idea how to do the rest of this 
             else if (input.contains("randomLetter")) {
                 System.out.println(mySoup.randomLetter());
             } 
